@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include<time.h>
+#define SIZE 10
+
+int main(void){
+	
+	size_t bingo;
+	unsigned int roll;
+	unsigned int freq[SIZE]={0};
+	int h;
+	
+	srand(time(NULL));
+	
+	for(roll =1; roll <= 100; ++roll){
+		bingo= 1 + rand()%9;
+		++freq[bingo];
+		
+	}
+	
+	printf("%s%15s%20s\n","Ball","Frequency","Histogram");
+	
+	for (bingo =1; bingo<SIZE; ++bingo){
+		printf("%4d%15d           ", bingo, freq[bingo]);
+		
+		for (h=1; h<=freq[bingo];++h){
+		printf("%c", '*');
+	}
+	puts("");
+	}
+	
+	
+}
+	
+
+	
+	
+	
+	
+	
